@@ -3,3 +3,6 @@
 
 # Visual studio code files
 .vscode/**
+
+# PlatformIO build files
+.pio
