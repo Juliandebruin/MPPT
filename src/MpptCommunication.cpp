@@ -7,7 +7,12 @@
 #define I2C_CLOCK_SPEED 100000
 
 MpptCommunication::MpptCommunication() : 
-	_wire(new TwoWire(0)) 
+	_wire(new TwoWire(0)),
+	_typeToSize {
+		{EDataSize::BYTE	, 1},
+		{EDataSize::WORD	, 2},
+		{EDataSize::LONGWORD, 4}
+	}
 {
 	pinMode(SDA_PIN, OUTPUT);
 	pinMode(SDL_PIN, OUTPUT);
@@ -38,9 +43,10 @@ float MpptCommunication::uint8ToFloat(uint8_t* buffer, size_t size, unsigned div
 }
 
 float MpptCommunication::get_register_data(SRegister reg) {
-	uint8_t* buffer = new uint8_t[reg.size];
-	recieve_bytes(buffer, reg.i2cAddress, reg.registerAddress, reg.size);
-	float value = uint8ToFloat(buffer, reg.size, 100);
+	size_t size = _typeToSize[reg.size];
+	uint8_t* buffer = new uint8_t[size];
+	recieve_bytes(buffer, reg.i2cAddress, reg.registerAddress, size);
+	float value = uint8ToFloat(buffer, size, 100);
 	free(buffer);
 	return value;
 }

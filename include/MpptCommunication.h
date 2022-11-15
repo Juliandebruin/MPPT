@@ -2,13 +2,26 @@
 
 #include <Arduino.h>
 #include <Wire.h>
+#include <map>
 
+/**
+ * @brief Enum which contains all the possible data sizes of a value.
+ */
+enum EDataSize {
+	BYTE,
+	WORD,
+	LONGWORD
+};
+
+/**
+ * @brief Struct which holds information about a register.
+ */
 struct SRegister {
-	std::string name;
-	size_t size;
-	unsigned devisionSize;
-	uint16_t i2cAddress;
-	uint16_t registerAddress;
+	std::string name;			/*< Name of register. 			  */
+	EDataSize size;				/*< Size of register. 			  */
+	unsigned devisionSize;		/*< Devision size of register. 	  */
+	uint16_t i2cAddress;		/*< I2C address of register. 	  */
+	uint16_t registerAddress;	/*< Register address of register. */
 };
 
 /**
@@ -58,5 +71,6 @@ private:
 	void recieve_bytes(uint8_t* buffer, uint16_t i2cAddress, uint16_t registerAddress, size_t size);
 
 private:
-	TwoWire *_wire;
+	TwoWire *_wire; 						 /*< Pointer to the TwoWire instance. 					    */
+	std::map<EDataSize, size_t> _typeToSize; /*< Map which is used to transform string size to a value. */
 };

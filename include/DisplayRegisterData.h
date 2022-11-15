@@ -2,6 +2,9 @@
 
 #include <string>
 
+/**
+ * @brief Class which handles displaying register data.
+ */
 class DisplayRegisterData
 {
 public:
