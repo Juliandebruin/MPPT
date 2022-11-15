@@ -8,7 +8,8 @@ typedef enum
 	INVALID,		/*< Invalid		   state */
 	INITIALISATION, /*< Initialisation state */
 	RUNNING, 		/*< Running 	   state */
-	CHARGING 		/*< Charging       state */
+	CHARGING, 		/*< Charging       state */
+	ERROR 			/*< Error          state */
 } EState;
 
 /**

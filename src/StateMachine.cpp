@@ -1,6 +1,7 @@
 #include "States\InitializationState.h"
 #include "States\RunningState.h"
 #include "States\ChargingState.h"
+#include "States\ErrorState.h"
 #include "StateMachine.h"
 #include "State.h"
 
@@ -8,7 +9,8 @@ StateMachine::StateMachine() :
 	_all_states({
 	   	{INITIALISATION, new InitialisationState},
 		{RUNNING, new RunningState},
-		{CHARGING, new ChargingState}
+		{CHARGING, new ChargingState},
+		{ERROR, new ErrorState}
 	}),
 	_current_state({INVALID, nullptr})
 {	
@@ -19,6 +21,7 @@ StateMachine::~StateMachine()
 	delete _all_states[INITIALISATION];
 	delete _all_states[RUNNING 		 ];
 	delete _all_states[CHARGING		 ];
+	delete _all_states[ERROR		 ];
 }
 
 void StateMachine::start() {
