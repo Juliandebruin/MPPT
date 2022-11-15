@@ -8,9 +8,9 @@
 StateMachine::StateMachine() : 
 	_all_states({
 	   	{INITIALISATION, new InitialisationState},
-		{RUNNING, new RunningState},
-		{CHARGING, new ChargingState},
-		{ERROR, new ErrorState}
+		{RUNNING	   , new RunningState		},
+		{CHARGING	   , new ChargingState		},
+		{ERROR		   , new ErrorState			}
 	}),
 	_current_state({INVALID, nullptr})
 {	

@@ -27,19 +27,18 @@ void MpptCommunication::send_data(uint16_t adress, const uint8_t *data, unsigned
 
 }
 
-float MpptCommunication::uint8ToFloat(uint8_t* buffer, size_t size, unsigned divisionValue) {									
+float MpptCommunication::uint8ToFloat(uint8_t* buffer, size_t size, unsigned divisionValue) {
 	float value = 0;
 
-	if (size == 1) {																		
-		value = float(buffer[0]);															
-	}																						
-	if (size == 2) {																		
-		value = float((buffer[1] << 8) + buffer[0]); 										
-	} else if (size == 4) {																	
-		value = float((buffer[3] << 24) + (buffer[2] << 16) + (buffer[1] << 8) + buffer[0]); 
-	} 				
+	if (size == 1) {
+		value = float(buffer[0]);
+	} else if (size == 2) {
+		value = float((buffer[1] << 8) + buffer[0]);
+	} else if (size == 4) {
+		value = float((buffer[3] << 24) + (buffer[2] << 16) + (buffer[1] << 8) + buffer[0]);
+	}
 
-	return value / divisionValue; 															
+	return value / divisionValue;
 }
 
 float MpptCommunication::get_register_data(SRegister reg) {

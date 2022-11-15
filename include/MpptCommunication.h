@@ -5,7 +5,7 @@
 #include <map>
 
 /**
- * @brief Enum which contains all the possible data sizes of a value.
+ * @brief Enum which contains all the possible data sizes of a register value.
  */
 enum EDataSize {
 	BYTE,
@@ -56,7 +56,7 @@ public:
 	 * @brief Retrieve a message from the MPPT.
 	 * 
 	 * @param reg Struct which contains the register information.
-	 * @return Float value of the register.
+	 * @return Value of register as float.
 	 */
 	float get_register_data(SRegister reg);
 
