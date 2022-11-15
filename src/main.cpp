@@ -3,10 +3,6 @@
 
 #include <Arduino.h>																						
 
-std::string toString(float value) {
-	
-}	
-
 void setup() {
 	Serial.begin(9600);
 	Serial.print("\n\n");
