@@ -1,30 +1,13 @@
+#include "DisplayRegisterData.h"
 #include "MpptCommunication.h"
 #include "StateMachine.h"
 #include "State.h"
 
-#include <string>
-#include <sstream>
-#include <iostream>
-#include <Arduino.h>
-
-#define INT_TO_FLOAT(value, divisionValue) (float(value)/divisionValue)
-#define UINT8P_TO_UINT16(buf) ((buf[1] << 8) + buf[0])
-#define UINT8P_TO_UINT32(buf) ((buf[3] << 24) + (buf[2] << 16) + (buf[1] << 8) + buf[0])
-
-struct option {
-	std::string name;
-	size_t size;
-	uint16_t i2cAddress;
-	uint16_t registerAddress;
-};
+#include <Arduino.h>																						
 
 std::string toString(float value) {
-	std::ostringstream ss;
-	ss << value;
-	std::string str(ss.str());
-
-	return str;
-}
+	
+}	
 
 void setup() {
 	Serial.begin(9600);
@@ -36,17 +19,13 @@ void setup() {
 void loop() {
 	StateMachine::instance().update();
 
-	uint8_t* buffer_rsense1 = nullptr;
-	option opt = {name: "CFG_RSENSE1_R", size: 2, i2cAddress: 0x10, registerAddress: 0x28};
-	
-	MpptCommunication *coms = new MpptCommunication;
-	buffer_rsense1 = coms->recieve_data(opt.i2cAddress, opt.registerAddress, opt.size);
+	SRegister reg = {name: "CFG_RSENSE1_R", size: 2, devisionSize: 100, i2cAddress: 0x10, registerAddress: 0x28};
 
-	uint16_t rsense1 = UINT8P_TO_UINT16(buffer_rsense1);
-	float CFG_RSENSE1_R = INT_TO_FLOAT(rsense1, 1000);
+	MpptCommunication coms;
+	float registerData = coms.get_register_data(reg);
 
-	std::string str = "Buffer: " + opt.name + ": " + toString(CFG_RSENSE1_R);
-	Serial.print(str.c_str());
+	DisplayRegisterData display;
+	display.display_register_as_float(reg, registerData);
 
-	delay(5000);
+	delay(500);
 }

@@ -15,24 +15,43 @@ MpptCommunication::MpptCommunication() :
 }
 
 MpptCommunication::~MpptCommunication() {
-
+	delete _wire;
 }
 
 void MpptCommunication::send_data(uint16_t adress, const uint8_t *data, unsigned size) {
 
 }
 
-uint8_t* MpptCommunication::recieve_data(const uint16_t i2cAddress, const uint16_t registerAddress, size_t size) {
-	uint8_t *buffer = nullptr;
+float MpptCommunication::uint8ToFloat(uint8_t* buffer, size_t size, unsigned divisionValue) {									
+	float value = 0;
 
-	Wire.beginTransmission(i2cAddress);
-	Wire.write(registerAddress);
-	Wire.endTransmission();
-	Wire.requestFrom(i2cAddress, size);
+	if (size == 1) {																		
+		value = float(buffer[0]);															
+	}																						
+	if (size == 2) {																		
+		value = float((buffer[1] << 8) + buffer[0]); 										
+	} else if (size == 4) {																	
+		value = float((buffer[3] << 24) + (buffer[2] << 16) + (buffer[1] << 8) + buffer[0]); 
+	} 				
 
-	if (Wire.available()){
-		Wire.readBytes(buffer, size);
+	return value / divisionValue; 															
+}
+
+float MpptCommunication::get_register_data(SRegister reg) {
+	uint8_t* buffer = new uint8_t[reg.size];
+	recieve_bytes(buffer, reg.i2cAddress, reg.registerAddress, reg.size);
+	float value = uint8ToFloat(buffer, reg.size, 100);
+	free(buffer);
+	return value;
+}
+
+void MpptCommunication::recieve_bytes(uint8_t* buffer, uint16_t i2cAddress, uint16_t registerAddress, size_t size) {
+	_wire->beginTransmission(i2cAddress);
+	_wire->write(registerAddress);
+	_wire->endTransmission();
+	_wire->requestFrom(i2cAddress, size);
+
+	if (_wire->available()){
+		_wire->readBytes(buffer, size);
 	}
-
-	return buffer;
 }
