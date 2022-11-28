@@ -1,7 +1,9 @@
 #pragma once
+
+#include "State.h"
+
 #include <map>
 #include <utility>
-#include "State.h"
 
 /**
  * @brief State machine class which handles the state transitions.

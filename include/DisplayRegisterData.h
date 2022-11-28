@@ -1,3 +1,5 @@
+#pragma once
+
 #include "MpptCommunication.h"
 
 #include <string>
