@@ -14,12 +14,21 @@ enum EDataSize {
 };
 
 /**
- * @brief Struct which holds information about a register.
+ * @brief Struct which holds information to read a register.
  */
-struct SRegister {
+struct SReadRegInfo {
 	std::string name;			/*< Name of register. 			  */
 	EDataSize size;				/*< Size of register. 			  */
 	unsigned devisionSize;		/*< Devision size of register. 	  */
+	uint16_t i2cAddress;		/*< I2C address of register. 	  */
+	uint16_t registerAddress;	/*< Register address of register. */
+};
+
+/**
+ * @brief Struct which holds information to write to a register.
+ */
+struct SWriteRegInfo {
+	std::string name;			/*< Name of register. 			  */
 	uint16_t i2cAddress;		/*< I2C address of register. 	  */
 	uint16_t registerAddress;	/*< Register address of register. */
 };
@@ -39,8 +48,13 @@ public:
 	 */
 	virtual ~MpptCommunication();
 
-
-	void send_data(uint16_t adress, const uint8_t *data, unsigned size);
+	/**
+	 * @brief Send data to a register.
+	 * 
+	 * @param reg Register info to send data to the register.
+	 * @param data Data to send.
+	 */
+	void send_data(SWriteRegInfo reg, uint16_t data);
 
 	/**
 	 * @brief Transform a uint8_t pointer to float and dive it by a division value.
@@ -55,10 +69,10 @@ public:
 	/**
 	 * @brief Retrieve a message from the MPPT.
 	 * 
-	 * @param reg Struct which contains the register information.
+	 * @param reg Struct which contains the register information to read date.
 	 * @return Value of register as float.
 	 */
-	float get_register_data(SRegister reg);
+	float get_register_data(SReadRegInfo reg);
 
 private:
 	/**

@@ -1,10 +1,12 @@
 #include "States/RunningState.h"
-#include "DisplayRegisterData.h"
 #include "MpptCommunication.h"
 
 #include <Arduino.h>
 
-RunningState::RunningState() {
+RunningState::RunningState() :
+	_coms(MpptCommunication()),
+	_displayData(DisplayRegisterData())
+{
 
 }
 
@@ -19,7 +21,7 @@ void RunningState::enter(){
 void RunningState::update(){
 	Serial.println("Updating RunningState");
 
-	SRegister reg = {
+	SReadRegInfo rReg = {
 		name		   	: "CFG_RSENSE1_R", 
 		size		   	: EDataSize::WORD, 
 		devisionSize   	: 100, 
@@ -27,11 +29,18 @@ void RunningState::update(){
 		registerAddress	: 0x28
 	};
 
-	MpptCommunication coms;
-	float registerData = coms.get_register_data(reg);
+	SWriteRegInfo wReg = {
+		name		   	: "CTRL_UPDATE_TELEM", 
+		i2cAddress	   	: 0x26, 
+		registerAddress	: 0xAA
+	};
 
-	DisplayRegisterData display;
-	display.display_register_as_float(reg, registerData);
+	// Read register CFG_RSENSE1_R
+	float registerData = _coms.get_register_data(rReg);
+	_displayData.display_register_as_float(rReg, registerData);
+
+	// Write register CTRL_UPDATE_TELEM
+	_coms.send_data(wReg, 0x0001);
 }
 
 void RunningState::exit(){

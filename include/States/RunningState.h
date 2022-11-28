@@ -1,4 +1,5 @@
 #include "State.h"
+#include "DisplayRegisterData.h"
 
 /**
  * @brief Running state class which is active when MPPT is running but not charging the batteries.
@@ -27,4 +28,8 @@ public:
 	 * @brief Function is called when state is exited.
 	 */
 	virtual void exit()   override;
+
+private:
+	MpptCommunication _coms;		  /*< Instance of MpptCommunication.  */
+	DisplayRegisterData _displayData; /*< Display register data instance. */
 };
