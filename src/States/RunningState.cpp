@@ -1,7 +1,6 @@
 #include "States/RunningState.h"
 #include "MpptCommunication.h"
 #include "StateMachine.h"
-#include "ControlFan.h"
 
 #include <Arduino.h>
 
