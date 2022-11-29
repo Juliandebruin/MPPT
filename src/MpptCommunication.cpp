@@ -38,17 +38,17 @@ float MpptCommunication::uint8ToFloat(uint8_t* buffer, size_t size, unsigned div
 }
 
 void MpptCommunication::send_data(SWriteRegInfo reg, uint16_t data) {
-	Wire.beginTransmission(reg.i2cAddress);
-	Wire.write(reg.registerAddress);
-	Wire.write(data);
-	Wire.endTransmission();
+	_wire->beginTransmission(reg.i2cAddress);
+	_wire->write(reg.registerAddress);
+	_wire->write(data);
+	_wire->endTransmission();
 }
 
 float MpptCommunication::get_register_data(SReadRegInfo reg) {
 	size_t size = _typeToSize[reg.size];
 	uint8_t* buffer = new uint8_t[size];
 	recieve_bytes(buffer, reg.i2cAddress, reg.registerAddress, size);
-	float value = uint8ToFloat(buffer, size, 100);
+	float value = uint8ToFloat(buffer, size, reg.devisionSize);
 	free(buffer);
 	return value;
 }
