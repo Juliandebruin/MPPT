@@ -5,7 +5,7 @@
 
 void setup() {
 	Serial.begin(9600);
-	Serial.print("\n\n");
+	Serial.print("\n\n Start \n\n");
 
 	StateMachine::instance().start();
 	StateMachine::instance().change_state(EState::RUNNING);
@@ -13,5 +13,5 @@ void setup() {
 
 void loop() {
 	StateMachine::instance().update();
-	delay(500);
+	delay(10);
 }

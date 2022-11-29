@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.h"
+#include "MpptCommunication.h"
 #include "DisplayRegisterData.h"
 
 /**

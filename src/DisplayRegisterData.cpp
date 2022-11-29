@@ -11,7 +11,7 @@ DisplayRegisterData::~DisplayRegisterData() {
 }
 
 void DisplayRegisterData::display_register_as_float(SReadRegInfo reg, float value) {
-    std::string printString = "Register: " + reg.name + " value: " + float_to_string(value) + " mOhm\n";
+    std::string printString = "Register: " + reg.name + " value: " + float_to_string(value) + "\n";
 	Serial.print(printString.c_str());
 }
 

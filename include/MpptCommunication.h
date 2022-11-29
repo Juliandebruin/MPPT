@@ -57,6 +57,15 @@ public:
 	void send_data(SWriteRegInfo reg, uint16_t data);
 
 	/**
+	 * @brief Retrieve a message from the MPPT.
+	 * 
+	 * @param reg Struct which contains the register information to read date.
+	 * @return Value of register as float.
+	 */
+	float get_register_data(SReadRegInfo reg);
+
+private:
+	/**
 	 * @brief Transform a uint8_t pointer to float and dive it by a division value.
 	 * 
 	 * @param buffer Buffer of unsigned 8 bit pointer.
@@ -66,15 +75,6 @@ public:
 	 */
 	float uint8ToFloat(uint8_t* buffer, size_t size, unsigned divisionValue);
 
-	/**
-	 * @brief Retrieve a message from the MPPT.
-	 * 
-	 * @param reg Struct which contains the register information to read date.
-	 * @return Value of register as float.
-	 */
-	float get_register_data(SReadRegInfo reg);
-
-private:
 	/**
 	 * @brief Recieve bytes from the MPPT.
 	 * 

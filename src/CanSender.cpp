@@ -3,7 +3,7 @@
 #include <CAN.h>
 
 CanSender::CanSender() {
-	CAN.begin(500E3);
+	CAN.begin(100E3);
 }
 
 CanSender::~CanSender() {
@@ -12,10 +12,8 @@ CanSender::~CanSender() {
 
 void CanSender::send_message(uint16_t id, std::string message) {
 	CAN.beginPacket(id);
-	CAN.write('h');
-	CAN.write('e');
-	CAN.write('l');
-	CAN.write('l');
-	CAN.write('o');
+	for (int i = 0; i < message.length(); i++){
+		CAN.write(message[i]);
+	}
 	CAN.endPacket();
 }

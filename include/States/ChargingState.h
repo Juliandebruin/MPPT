@@ -1,6 +1,8 @@
 #pragma once
 
 #include "State.h"
+#include "MpptCommunication.h"
+#include "DisplayRegisterData.h"
 
 /**
  * @brief Charging state class which is active when MPPT is charging the batteries.
@@ -29,4 +31,8 @@ public:
 	 * @brief Function is called when state is exited.
 	 */
 	virtual void exit()   override;
+
+private:
+	MpptCommunication _coms;		  /*< Instance of MpptCommunication.  */
+	DisplayRegisterData _displayData; /*< Display register data instance. */
 };
