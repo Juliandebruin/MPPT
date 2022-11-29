@@ -5,7 +5,7 @@
 
 ChargingState::ChargingState() :
 	_coms(MpptCommunication()),
-	_displayData(DisplayRegisterData()) 
+	_display_data(DisplayRegisterData()) 
 {
 
 }
@@ -39,9 +39,9 @@ void ChargingState::update(){
 	};
 
 	float vin = _coms.get_register_data(teleRead);
-	_displayData.display_register_as_float(teleRead, vin);
+	_display_data.display_register_as_float(teleRead, vin);
 
-	std::string message = _displayData.float_to_string(vin) + "V";
+	std::string message = _display_data.float_to_string(vin) + "V";
 	Serial.println(message.c_str());
 
 	CanSender sender;

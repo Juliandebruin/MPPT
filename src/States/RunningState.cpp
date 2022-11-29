@@ -7,7 +7,7 @@
 RunningState::RunningState() :
 	_sensors(ReadSensors()),
 	_coms(MpptCommunication()),
-	_displayData(DisplayRegisterData())
+	_display_data(DisplayRegisterData())
 {
 
 }

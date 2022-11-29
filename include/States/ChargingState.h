@@ -36,5 +36,5 @@ public:
 private:
 	ControlFan _fan; 				  /*< Instance to control the fan. 	  */	
 	MpptCommunication _coms;		  /*< Instance of MpptCommunication.  */
-	DisplayRegisterData _displayData; /*< Display register data instance. */
+	DisplayRegisterData _display_data; /*< Display register data instance. */
 };
