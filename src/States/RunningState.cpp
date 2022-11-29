@@ -6,6 +6,7 @@
 #include <Arduino.h>
 
 RunningState::RunningState() :
+	_sensors(ReadSensors()),
 	_coms(MpptCommunication()),
 	_displayData(DisplayRegisterData())
 {
@@ -13,13 +14,17 @@ RunningState::RunningState() :
 }
 
 RunningState::~RunningState() {
-
+	
 }
 
 void RunningState::enter(){
 	Serial.println("Entering RunningState");
 
-	delay(2000);
+	Serial.print("Temp1: ");
+  	Serial.println(_sensors.get_temperature(0));
+
+	Serial.print("Temp2: ");
+  	Serial.println(_sensors.get_temperature(1));
 
 	StateMachine::instance().change_state(EState::CHARGING);
 }

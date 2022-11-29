@@ -8,9 +8,11 @@ void setup() {
 	Serial.print("\n\n Start \n\n");
 
 	StateMachine::instance().start();
-	StateMachine::instance().change_state(EState::RUNNING);
+	StateMachine::instance().update();
+	StateMachine::instance().change_state(RUNNING);
 }
 
 void loop() {
 	StateMachine::instance().update();
+	delay(300);
 }

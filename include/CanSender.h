@@ -2,6 +2,9 @@
 
 #include <string>
 
+/**
+ * @brief Class to send CAN messages over the CAN bus.
+ */
 class CanSender
 {
 public:
