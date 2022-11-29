@@ -23,6 +23,7 @@ void ChargingState::enter(){
 		registerAddress	: 0x23
 	};
 
+	_fan.set_fan_speed(1);
 	_coms.send_data(chargeWrite, 0x01);
 }
 

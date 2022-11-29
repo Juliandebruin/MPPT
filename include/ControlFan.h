@@ -12,7 +12,10 @@ public:
     /**
      * @brief Set the Fan Speed.
      * 
-     * @param speed Speed of the fan in integers.
+     * @param speed Speed of the fan in integers should.
      */
-    void setFanSpeed(int speed);
+    void set_fan_speed(int speedPerecentage);
+
+public:
+    bool _fan_running; /*< Variable indicates if fan is running. */
 };
