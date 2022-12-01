@@ -1,9 +1,11 @@
 #include "States/ChargingState.h"
-#include "CanSender.h"
 
 #include <Arduino.h>
+#include <utility>
 
 ChargingState::ChargingState() :
+	_fan(ControlFan()),
+	_can_coms(CanComs()),
 	_coms(MpptCommunication()),
 	_display_data(DisplayRegisterData()) 
 {
@@ -44,8 +46,13 @@ void ChargingState::update(){
 	std::string message = _display_data.float_to_string(vin) + "V";
 	Serial.println(message.c_str());
 
-	CanSender sender;
-	sender.send_message(0x08, message);
+	_can_coms.send_message(0x08, message);
+
+	std::pair<long, std::string> package = _can_coms.receive_message();
+	Serial.print("ID: 0x");
+	Serial.print(package.first, HEX);
+	Serial.print(" Message: ");
+	Serial.println(package.second.c_str());
 }
 
 void ChargingState::exit(){

@@ -16,6 +16,6 @@ public:
      */
     void set_fan_speed(int speedPerecentage);
 
-public:
+private:
     bool _fan_running; /*< Variable indicates if fan is running. */
 };

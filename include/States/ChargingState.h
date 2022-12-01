@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.h"
+#include "CanComs.h"
 #include "ControlFan.h"
 #include "MpptCommunication.h"
 #include "DisplayRegisterData.h"
@@ -34,7 +35,8 @@ public:
 	virtual void exit()   override;
 
 private:
-	ControlFan _fan; 				  /*< Instance to control the fan. 	  */	
-	MpptCommunication _coms;		  /*< Instance of MpptCommunication.  */
+	ControlFan _fan; 				   /*< Instance to control the fan.    */	
+	CanComs	_can_coms;				   /*< Instance of CanCommunication.   */
+	MpptCommunication _coms;		   /*< Instance of MpptCommunication.  */
 	DisplayRegisterData _display_data; /*< Display register data instance. */
 };
