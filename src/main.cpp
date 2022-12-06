@@ -14,5 +14,5 @@ void setup() {
 
 void loop() {
 	StateMachine::instance().update();
-	// delay(300);
+	delay(300);
 }

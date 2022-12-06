@@ -7,7 +7,7 @@
 #define I2C_CLOCK_SPEED 100000
 
 MpptCommunication::MpptCommunication() : 
-	_wire(new TwoWire(0)),
+	_wire(&Wire),
 	_typeToSize {
 		{EDataSize::BYTE	, 1},
 		{EDataSize::WORD	, 2},
