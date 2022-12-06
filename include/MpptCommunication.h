@@ -1,8 +1,21 @@
 #pragma once
 
+// #include "ReadRegisters.h"
+
 #include <Arduino.h>
 #include <Wire.h>
 #include <map>
+
+/**
+ * @brief Struct which holds information to write to a register.
+ */
+struct SWriteRegInfo {
+	std::string name;			/*< Name of register. 			  */
+	uint16_t i2cAddress;		/*< I2C address of register. 	  */
+	uint16_t registerAddress;	/*< Register address of register. */
+};
+
+#define I2C_ADDRESS 0x10
 
 /**
  * @brief Enum which contains all the possible data sizes of a register value.
@@ -25,12 +38,29 @@ struct SReadRegInfo {
 };
 
 /**
- * @brief Struct which holds information to write to a register.
+ * @brief Struct which contains names of all telemetry(TELE) registers.
  */
-struct SWriteRegInfo {
-	std::string name;			/*< Name of register. 			  */
-	uint16_t i2cAddress;		/*< I2C address of register. 	  */
-	uint16_t registerAddress;	/*< Register address of register. */
+enum EReadRegisters {
+	TELE_TBAT = 0   ,
+	TELE_POUT       ,
+    TELE_PIN        ,
+    TELE_EFF        ,
+    TELE_IOUT       ,
+    TELE_IIN        ,
+    TELE_VBAT       ,
+    TELE_VIN        ,
+    TELE_VINR       ,
+    STAT_CHARGER    ,
+    STAT_SYSTEM     ,
+    STAT_SUPPLY     ,
+    STAT_TS0_REMAIN ,
+    STAT_TS1_REMAIN ,
+    STAT_TS2_REMAIN ,
+    STAT_TS3_REMAIN ,
+    STAT_CHRG_FAULTS,
+    STAT_VERSION    ,
+    STAT_BOOT_CRC   ,
+    STAT_CFG_CRC
 };
 
 /**
@@ -84,7 +114,10 @@ private:
 	 */
 	void recieve_bytes(uint8_t* buffer, uint16_t i2cAddress, uint16_t registerAddress, size_t size);
 
+public:
+	std::map<int, SReadRegInfo> _read_registers;
+
 private:
-	TwoWire *_wire; 						 /*< Pointer to the TwoWire instance. 					    */
-	std::map<EDataSize, size_t> _typeToSize; /*< Map which is used to transform string size to a value. */
+	TwoWire *_wire; 						 					/*< Pointer to the TwoWire instance. 					   */
+	std::map<EDataSize, size_t> _typeToSize; 					/*< Map which is used to transform string size to a value. */
 };

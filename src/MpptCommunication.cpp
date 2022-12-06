@@ -12,6 +12,28 @@ MpptCommunication::MpptCommunication() :
 		{EDataSize::BYTE	, 1},
 		{EDataSize::WORD	, 2},
 		{EDataSize::LONGWORD, 4}
+	},
+	_read_registers {
+		{EReadRegisters::TELE_TBAT       , {"TELE_TBAT"       , EDataSize::WORD    ,   10, I2C_ADDRESS, 0x00}},
+		{EReadRegisters::TELE_POUT       , {"TELE_POUT"       , EDataSize::WORD    ,  100, I2C_ADDRESS, 0x02}},
+		{EReadRegisters::TELE_PIN        , {"TELE_PIN"        , EDataSize::WORD    , 1000, I2C_ADDRESS, 0x04}},
+		{EReadRegisters::TELE_EFF        , {"TELE_EFF"        , EDataSize::WORD    ,  100, I2C_ADDRESS, 0x06}},
+		{EReadRegisters::TELE_IOUT       , {"TELE_IOUT"       , EDataSize::WORD    , 1000, I2C_ADDRESS, 0x08}},
+		{EReadRegisters::TELE_IIN        , {"TELE_IIN"        , EDataSize::WORD    , 1000, I2C_ADDRESS, 0x0A}},
+		{EReadRegisters::TELE_VBAT       , {"TELE_VBAT"       , EDataSize::WORD    ,  100, I2C_ADDRESS, 0x0C}},
+		{EReadRegisters::TELE_VIN        , {"TELE_VIN"        , EDataSize::WORD    ,  100, I2C_ADDRESS, 0x0E}},
+		{EReadRegisters::TELE_VINR       , {"TELE_VINR"       , EDataSize::WORD    ,  100, I2C_ADDRESS, 0x10}},
+		{EReadRegisters::STAT_CHARGER    , {"STAT_CHARGER"    , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x12}},
+		{EReadRegisters::STAT_SYSTEM     , {"STAT_SYSTEM"     , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x13}},
+		{EReadRegisters::STAT_SUPPLY     , {"STAT_SUPPLY"     , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x14}},
+		{EReadRegisters::STAT_TS0_REMAIN , {"STAT_TS0_REMAIN" , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x15}},
+		{EReadRegisters::STAT_TS1_REMAIN , {"STAT_TS1_REMAIN" , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x16}},
+		{EReadRegisters::STAT_TS2_REMAIN , {"STAT_TS2_REMAIN" , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x17}},
+		{EReadRegisters::STAT_TS3_REMAIN , {"STAT_TS3_REMAIN" , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x18}},
+		{EReadRegisters::STAT_CHRG_FAULTS, {"STAT_CHRG_FAULTS", EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x19}},
+		{EReadRegisters::STAT_VERSION    , {"STAT_VERSION"    , EDataSize::BYTE    ,    1, I2C_ADDRESS, 0x1A}},
+		{EReadRegisters::STAT_BOOT_CRC   , {"STAT_BOOT_CRC"   , EDataSize::WORD    ,    1, I2C_ADDRESS, 0x1C}},
+		{EReadRegisters::STAT_CFG_CRC    , {"STAT_CFG_CRC"    , EDataSize::WORD    ,    1, I2C_ADDRESS, 0x1E}}
 	}
 {
 	pinMode(SDA_PIN, OUTPUT);

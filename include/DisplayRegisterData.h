@@ -19,13 +19,14 @@ public:
      */
     virtual ~DisplayRegisterData();
     /**
-     * @brief Display the register data on the serial monitor as float.
+     * @brief Display the value of register on the serial monitor.
      * 
      * @param reg Register information.
      * @param value Value of register as float.
      */
-    void display_register_as_float(SReadRegInfo reg, float value);
+    void display_register_value(SReadRegInfo reg, float value);
 
+private:
     /**
      * @brief Transforms a float into string value.
      * 
