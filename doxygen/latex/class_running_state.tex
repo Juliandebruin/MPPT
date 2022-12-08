@@ -1,0 +1,86 @@
+\hypertarget{class_running_state}{}\doxysection{Running\+State Class Reference}
+\label{class_running_state}\index{RunningState@{RunningState}}
+
+
+Running state class which is active when MPPT is running but not charging the batteries.  
+
+
+
+
+{\ttfamily \#include $<$Running\+State.\+h$>$}
+
+Inheritance diagram for Running\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_running_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_running_state_a71bdae4b86204bf8a06d416f32f286f8}\label{class_running_state_a71bdae4b86204bf8a06d416f32f286f8}} 
+{\bfseries Running\+State} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Running \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_running_state_a4e1947451eb70be1416b747681d1402a}\label{class_running_state_a4e1947451eb70be1416b747681d1402a}} 
+virtual {\bfseries $\sim$\+Running\+State} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Running \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_running_state_a9051db25ec9f71f2080d94c8ebc80a6f}{enter}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is entered. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_running_state_ac8b7663d5c6c71c820541aba42be67c7}{update}} () override
+\begin{DoxyCompactList}\small\item\em Function contains the update loop of the state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_running_state_a0757be17336688e8d420b28b358b08bd}{exit}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is exited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Running state class which is active when MPPT is running but not charging the batteries. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_running_state_a9051db25ec9f71f2080d94c8ebc80a6f}\label{class_running_state_a9051db25ec9f71f2080d94c8ebc80a6f}} 
+\index{RunningState@{RunningState}!enter@{enter}}
+\index{enter@{enter}!RunningState@{RunningState}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void Running\+State\+::enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is entered. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}{State}}.
+
+\mbox{\Hypertarget{class_running_state_a0757be17336688e8d420b28b358b08bd}\label{class_running_state_a0757be17336688e8d420b28b358b08bd}} 
+\index{RunningState@{RunningState}!exit@{exit}}
+\index{exit@{exit}!RunningState@{RunningState}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void Running\+State\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is exited. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a9cd211326a31e139de1dbeacb01ef188}{State}}.
+
+\mbox{\Hypertarget{class_running_state_ac8b7663d5c6c71c820541aba42be67c7}\label{class_running_state_ac8b7663d5c6c71c820541aba42be67c7}} 
+\index{RunningState@{RunningState}!update@{update}}
+\index{update@{update}!RunningState@{RunningState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Running\+State\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function contains the update loop of the state. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+States/Running\+State.\+h\item 
+src/\+States/Running\+State.\+cpp\end{DoxyCompactItemize}

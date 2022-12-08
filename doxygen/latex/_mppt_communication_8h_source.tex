@@ -1,0 +1,51 @@
+\hypertarget{_mppt_communication_8h_source}{}\doxysection{Mppt\+Communication.\+h}
+\label{_mppt_communication_8h_source}\index{include/MpptCommunication.h@{include/MpptCommunication.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <Wire.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 \textcolor{keyword}{enum} EDataSize \{}
+\DoxyCodeLine{11     BYTE,}
+\DoxyCodeLine{12     WORD,}
+\DoxyCodeLine{13     LONGWORD}
+\DoxyCodeLine{14 \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_read_reg_info}{SReadRegInfo}} \{}
+\DoxyCodeLine{20     std::string name;           \textcolor{comment}{/*< Name of register.             */}}
+\DoxyCodeLine{21     EDataSize size;             \textcolor{comment}{/*< Size of register.             */}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{unsigned} devisionSize;      \textcolor{comment}{/*< Devision size of register.    */}}
+\DoxyCodeLine{23     uint16\_t i2cAddress;        \textcolor{comment}{/*< I2C address of register.      */}}
+\DoxyCodeLine{24     uint16\_t registerAddress;   \textcolor{comment}{/*< Register address of register. */}}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_write_reg_info}{SWriteRegInfo}} \{}
+\DoxyCodeLine{31     std::string name;           \textcolor{comment}{/*< Name of register.             */}}
+\DoxyCodeLine{32     uint16\_t i2cAddress;        \textcolor{comment}{/*< I2C address of register.      */}}
+\DoxyCodeLine{33     uint16\_t registerAddress;   \textcolor{comment}{/*< Register address of register. */}}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{class_mppt_communication}{MpptCommunication}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_mppt_communication_ab569873a3c8f91f8823628a1c0e25e57}{MpptCommunication}}();}
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_mppt_communication_a3d69379505db7df080761407096a55aa}{\string~MpptCommunication}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mppt_communication_a959aa73753c4424b2cd3c63b6628c937}{send\_data}}(\mbox{\hyperlink{struct_s_write_reg_info}{SWriteRegInfo}} reg, uint16\_t data);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_mppt_communication_a9e359270b55032d03e07970f9782a061}{get\_register\_data}}(\mbox{\hyperlink{struct_s_read_reg_info}{SReadRegInfo}} reg);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     \textcolor{keywordtype}{float} uint8ToFloat(uint8\_t* buffer, \textcolor{keywordtype}{size\_t} size, \textcolor{keywordtype}{unsigned} divisionValue);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} recieve\_bytes(uint8\_t* buffer, uint16\_t i2cAddress, uint16\_t registerAddress, \textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{private}:}
+\DoxyCodeLine{88     TwoWire *\_wire;                          \textcolor{comment}{/*< Pointer to the TwoWire instance.                       */}}
+\DoxyCodeLine{89     std::map<EDataSize, size\_t> \_typeToSize; \textcolor{comment}{/*< Map which is used to transform string size to a value. */}}
+\DoxyCodeLine{90 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,23 @@
+\hypertarget{_read_sensors_8h_source}{}\doxysection{Read\+Sensors.\+h}
+\label{_read_sensors_8h_source}\index{include/ReadSensors.h@{include/ReadSensors.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <OneWire.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <DallasTemperature.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_read_sensors}{ReadSensors}} }
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_read_sensors_ade98ef0194e4e0b34b0a31800ad14677}{ReadSensors}}();}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_read_sensors_a1797c04ca2ac4c9b02ead59d395cafda}{\string~ReadSensors}}(); }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_read_sensors_a62f1008195ba8469765544b28e427e37}{get\_temperature}}(\textcolor{keywordtype}{int} sensorId);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     OneWire \_one\_wire;          \textcolor{comment}{/*< OneWire object for one wire communication.        */}}
+\DoxyCodeLine{31     DallasTemperature \_sensors; \textcolor{comment}{/*< DallasTemperature object for temperature sensors. */}}
+\DoxyCodeLine{32 \};}
+
+\end{DoxyCode}

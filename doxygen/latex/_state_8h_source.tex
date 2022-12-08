@@ -1,0 +1,25 @@
+\hypertarget{_state_8h_source}{}\doxysection{State.\+h}
+\label{_state_8h_source}\index{include/State.h@{include/State.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{6 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     INVALID,        \textcolor{comment}{/*< Invalid        state */}}
+\DoxyCodeLine{9     INITIALISATION, \textcolor{comment}{/*< Initialisation state */}}
+\DoxyCodeLine{10     RUNNING,        \textcolor{comment}{/*< Running        state */}}
+\DoxyCodeLine{11     CHARGING,       \textcolor{comment}{/*< Charging       state */}}
+\DoxyCodeLine{12     ERROR           \textcolor{comment}{/*< Error          state */}}
+\DoxyCodeLine{13 \} EState;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_state_a783d52422b544bb226e13de8ecfd6ad6}{\string~State}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}{enter}}()  = 0;}
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}{update}}() = 0;}
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a9cd211326a31e139de1dbeacb01ef188}{exit}}()   = 0;}
+\DoxyCodeLine{37 \};}
+
+\end{DoxyCode}

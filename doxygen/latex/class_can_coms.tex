@@ -1,0 +1,66 @@
+\hypertarget{class_can_coms}{}\doxysection{Can\+Coms Class Reference}
+\label{class_can_coms}\index{CanComs@{CanComs}}
+
+
+Class to send and recieve CAN messages over the CAN bus.  
+
+
+
+
+{\ttfamily \#include $<$Can\+Coms.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_can_coms_a5184729899b8ba8c6eca4279b6653d68}\label{class_can_coms_a5184729899b8ba8c6eca4279b6653d68}} 
+{\bfseries Can\+Coms} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_can_coms}{Can\+Coms}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_can_coms_ab347be8065fea14a87880b5366a5519d}\label{class_can_coms_ab347be8065fea14a87880b5366a5519d}} 
+virtual {\bfseries $\sim$\+Can\+Coms} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_can_coms}{Can\+Coms}} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_can_coms_a4eec379bc0ad0fe7f927be8f02b9499c}{send\+\_\+message}} (uint16\+\_\+t id, std\+::string message)
+\begin{DoxyCompactList}\small\item\em Send a message to the CAN bus. \end{DoxyCompactList}\item 
+std\+::pair$<$ long, std\+::string $>$ \mbox{\hyperlink{class_can_coms_a545fb8449071c51fc6710c0b8a1029ac}{receive\+\_\+message}} ()
+\begin{DoxyCompactList}\small\item\em Recieve a message from the CAN bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to send and recieve CAN messages over the CAN bus. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_can_coms_a545fb8449071c51fc6710c0b8a1029ac}\label{class_can_coms_a545fb8449071c51fc6710c0b8a1029ac}} 
+\index{CanComs@{CanComs}!receive\_message@{receive\_message}}
+\index{receive\_message@{receive\_message}!CanComs@{CanComs}}
+\doxysubsubsection{\texorpdfstring{receive\_message()}{receive\_message()}}
+{\footnotesize\ttfamily std\+::pair$<$ long, std\+::string $>$ Can\+Coms\+::receive\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recieve a message from the CAN bus. 
+
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$long, std\+::string$>$ Id and Message which is recieved. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_can_coms_a4eec379bc0ad0fe7f927be8f02b9499c}\label{class_can_coms_a4eec379bc0ad0fe7f927be8f02b9499c}} 
+\index{CanComs@{CanComs}!send\_message@{send\_message}}
+\index{send\_message@{send\_message}!CanComs@{CanComs}}
+\doxysubsubsection{\texorpdfstring{send\_message()}{send\_message()}}
+{\footnotesize\ttfamily void Can\+Coms\+::send\+\_\+message (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{id,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Send a message to the CAN bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id used to as address by can bus. \\
+\hline
+{\em message} & Message to send. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Can\+Coms.\+h\item 
+src/Can\+Coms.\+cpp\end{DoxyCompactItemize}

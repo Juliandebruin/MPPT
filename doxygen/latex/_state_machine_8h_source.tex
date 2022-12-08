@@ -1,0 +1,33 @@
+\hypertarget{_state_machine_8h_source}{}\doxysection{State\+Machine.\+h}
+\label{_state_machine_8h_source}\index{include/StateMachine.h@{include/StateMachine.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}State.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_state_machine}{StateMachine}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \textcolor{keyword}{static} \mbox{\hyperlink{class_state_machine}{StateMachine}} \&\mbox{\hyperlink{class_state_machine_aa0ef420d141c0bc8ec3edb7c051d3e99}{instance}}()}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \textcolor{keyword}{static} \mbox{\hyperlink{class_state_machine}{StateMachine}} INSTANCE;}
+\DoxyCodeLine{23         \textcolor{keywordflow}{return} INSTANCE;}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_machine_ad5af4aecb482da7f35b9d1987460e862}{start}}();}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_machine_abc3ca328b644f3d2c557fd04ccd65ddd}{update}}();}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_machine_a6a25ac1e8390e6d05b864f233b48be5e}{change\_state}}(EState newState);}
+\DoxyCodeLine{44     EState \mbox{\hyperlink{class_state_machine_a04ca063a32cadabc92e417d5f1adf3a7}{get\_current\_state}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_state_machine}{StateMachine}}();}
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_state_machine}{\string~StateMachine}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     std::map <EState, State *> \_all\_states;     \textcolor{comment}{/*< Map to acess all states. */}}
+\DoxyCodeLine{57     std::pair<EState, State *> \_current\_state;  \textcolor{comment}{/*< The current state.       */}}
+\DoxyCodeLine{58 \};}
+
+\end{DoxyCode}

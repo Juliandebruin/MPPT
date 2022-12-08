@@ -1,0 +1,86 @@
+\hypertarget{class_charging_state}{}\doxysection{Charging\+State Class Reference}
+\label{class_charging_state}\index{ChargingState@{ChargingState}}
+
+
+Charging state class which is active when MPPT is charging the batteries.  
+
+
+
+
+{\ttfamily \#include $<$Charging\+State.\+h$>$}
+
+Inheritance diagram for Charging\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_charging_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_charging_state_ae3713d8d847b8ba2dd2688f90b951fcc}\label{class_charging_state_ae3713d8d847b8ba2dd2688f90b951fcc}} 
+{\bfseries Charging\+State} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Charging \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_charging_state_a82202f479f648869df82687a8b2671ea}\label{class_charging_state_a82202f479f648869df82687a8b2671ea}} 
+virtual {\bfseries $\sim$\+Charging\+State} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Charging \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_charging_state_aa57edf8090754d68eae08f27ea3b784c}{enter}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is entered. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_charging_state_afd04709aca751e7abc2a5c107d81e9c8}{update}} () override
+\begin{DoxyCompactList}\small\item\em Function contains the update loop of the state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_charging_state_adad38114ace14c2c707123d023516446}{exit}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is exited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Charging state class which is active when MPPT is charging the batteries. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_charging_state_aa57edf8090754d68eae08f27ea3b784c}\label{class_charging_state_aa57edf8090754d68eae08f27ea3b784c}} 
+\index{ChargingState@{ChargingState}!enter@{enter}}
+\index{enter@{enter}!ChargingState@{ChargingState}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void Charging\+State\+::enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is entered. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}{State}}.
+
+\mbox{\Hypertarget{class_charging_state_adad38114ace14c2c707123d023516446}\label{class_charging_state_adad38114ace14c2c707123d023516446}} 
+\index{ChargingState@{ChargingState}!exit@{exit}}
+\index{exit@{exit}!ChargingState@{ChargingState}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void Charging\+State\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is exited. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a9cd211326a31e139de1dbeacb01ef188}{State}}.
+
+\mbox{\Hypertarget{class_charging_state_afd04709aca751e7abc2a5c107d81e9c8}\label{class_charging_state_afd04709aca751e7abc2a5c107d81e9c8}} 
+\index{ChargingState@{ChargingState}!update@{update}}
+\index{update@{update}!ChargingState@{ChargingState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Charging\+State\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function contains the update loop of the state. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+States/Charging\+State.\+h\item 
+src/\+States/Charging\+State.\+cpp\end{DoxyCompactItemize}

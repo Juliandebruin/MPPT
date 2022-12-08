@@ -1,0 +1,82 @@
+\hypertarget{class_state}{}\doxysection{State Class Reference}
+\label{class_state}\index{State@{State}}
+
+
+Abstract state class.  
+
+
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
+Inheritance diagram for State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_a783d52422b544bb226e13de8ecfd6ad6}\label{class_state_a783d52422b544bb226e13de8ecfd6ad6}} 
+virtual {\bfseries $\sim$\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}{enter}} ()=0
+\begin{DoxyCompactList}\small\item\em Function is called when state is entered. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em Function contains the update loop of the state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_a9cd211326a31e139de1dbeacb01ef188}{exit}} ()=0
+\begin{DoxyCompactList}\small\item\em Function is called when state is exited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract state class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}\label{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}} 
+\index{State@{State}!enter@{enter}}
+\index{enter@{enter}!State@{State}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily virtual void State\+::enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function is called when state is entered. 
+
+
+
+Implemented in \mbox{\hyperlink{class_charging_state_aa57edf8090754d68eae08f27ea3b784c}{Charging\+State}}, \mbox{\hyperlink{class_error_state_a79806bd5f95fc7bdb37b05f444c2069a}{Error\+State}}, \mbox{\hyperlink{class_initialisation_state_ab93e402d160054f3a78de8d637d4c965}{Initialisation\+State}}, and \mbox{\hyperlink{class_running_state_a9051db25ec9f71f2080d94c8ebc80a6f}{Running\+State}}.
+
+\mbox{\Hypertarget{class_state_a9cd211326a31e139de1dbeacb01ef188}\label{class_state_a9cd211326a31e139de1dbeacb01ef188}} 
+\index{State@{State}!exit@{exit}}
+\index{exit@{exit}!State@{State}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily virtual void State\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function is called when state is exited. 
+
+
+
+Implemented in \mbox{\hyperlink{class_charging_state_adad38114ace14c2c707123d023516446}{Charging\+State}}, \mbox{\hyperlink{class_error_state_ad3b6e725831682a32fae98e07c091c89}{Error\+State}}, \mbox{\hyperlink{class_initialisation_state_ac6bfb10a5b06a73113d74eb36c4a87f8}{Initialisation\+State}}, and \mbox{\hyperlink{class_running_state_a0757be17336688e8d420b28b358b08bd}{Running\+State}}.
+
+\mbox{\Hypertarget{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}\label{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}} 
+\index{State@{State}!update@{update}}
+\index{update@{update}!State@{State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void State\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function contains the update loop of the state. 
+
+
+
+Implemented in \mbox{\hyperlink{class_charging_state_afd04709aca751e7abc2a5c107d81e9c8}{Charging\+State}}, \mbox{\hyperlink{class_error_state_a179d6bb2caed27bdef3c37f11265c29a}{Error\+State}}, \mbox{\hyperlink{class_initialisation_state_a89247c22ca8732bbf6558726a53faa37}{Initialisation\+State}}, and \mbox{\hyperlink{class_running_state_ac8b7663d5c6c71c820541aba42be67c7}{Running\+State}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/State.\+h\end{DoxyCompactItemize}

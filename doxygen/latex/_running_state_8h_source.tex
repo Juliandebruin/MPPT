@@ -1,0 +1,28 @@
+\hypertarget{_running_state_8h_source}{}\doxysection{Running\+State.\+h}
+\label{_running_state_8h_source}\index{include/States/RunningState.h@{include/States/RunningState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}State.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}ReadSensors.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}MpptCommunication.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}DisplayRegisterData.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_running_state}{RunningState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_running_state_a71bdae4b86204bf8a06d416f32f286f8}{RunningState}}();}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_running_state_a4e1947451eb70be1416b747681d1402a}{\string~RunningState}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_running_state_a9051db25ec9f71f2080d94c8ebc80a6f}{enter}}()  \textcolor{keyword}{override};}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_running_state_ac8b7663d5c6c71c820541aba42be67c7}{update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{34     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_running_state_a0757be17336688e8d420b28b358b08bd}{exit}}()   \textcolor{keyword}{override};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_read_sensors}{ReadSensors}} \_sensors;              \textcolor{comment}{/*< Instance torRead the temperature sensors on the circuit board. */}}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_mppt_communication}{MpptCommunication}} \_coms;         \textcolor{comment}{/*< Instance of MpptCommunication.                                 */}}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_display_register_data}{DisplayRegisterData}} \_display\_data; \textcolor{comment}{/*< Display register data instance.                                */}}
+\DoxyCodeLine{40 \};}
+
+\end{DoxyCode}

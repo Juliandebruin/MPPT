@@ -1,0 +1,86 @@
+\hypertarget{class_initialisation_state}{}\doxysection{Initialisation\+State Class Reference}
+\label{class_initialisation_state}\index{InitialisationState@{InitialisationState}}
+
+
+Initialisation state class which is active when MPPT is initializing on start up.  
+
+
+
+
+{\ttfamily \#include $<$Initialization\+State.\+h$>$}
+
+Inheritance diagram for Initialisation\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_initialisation_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_initialisation_state_ad56c6b504b608b8ebcb9dfc340a180e2}\label{class_initialisation_state_ad56c6b504b608b8ebcb9dfc340a180e2}} 
+{\bfseries Initialisation\+State} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Initialisation \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_initialisation_state_aa0019cbd93f667bb1718b7dcc356f4d8}\label{class_initialisation_state_aa0019cbd93f667bb1718b7dcc356f4d8}} 
+virtual {\bfseries $\sim$\+Initialisation\+State} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Initialisation \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_initialisation_state_ab93e402d160054f3a78de8d637d4c965}{enter}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is entered. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_initialisation_state_a89247c22ca8732bbf6558726a53faa37}{update}} () override
+\begin{DoxyCompactList}\small\item\em Function contains the update loop of the state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_initialisation_state_ac6bfb10a5b06a73113d74eb36c4a87f8}{exit}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is exited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initialisation state class which is active when MPPT is initializing on start up. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_initialisation_state_ab93e402d160054f3a78de8d637d4c965}\label{class_initialisation_state_ab93e402d160054f3a78de8d637d4c965}} 
+\index{InitialisationState@{InitialisationState}!enter@{enter}}
+\index{enter@{enter}!InitialisationState@{InitialisationState}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void Initialisation\+State\+::enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is entered. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}{State}}.
+
+\mbox{\Hypertarget{class_initialisation_state_ac6bfb10a5b06a73113d74eb36c4a87f8}\label{class_initialisation_state_ac6bfb10a5b06a73113d74eb36c4a87f8}} 
+\index{InitialisationState@{InitialisationState}!exit@{exit}}
+\index{exit@{exit}!InitialisationState@{InitialisationState}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void Initialisation\+State\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is exited. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a9cd211326a31e139de1dbeacb01ef188}{State}}.
+
+\mbox{\Hypertarget{class_initialisation_state_a89247c22ca8732bbf6558726a53faa37}\label{class_initialisation_state_a89247c22ca8732bbf6558726a53faa37}} 
+\index{InitialisationState@{InitialisationState}!update@{update}}
+\index{update@{update}!InitialisationState@{InitialisationState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Initialisation\+State\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function contains the update loop of the state. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+States/Initialization\+State.\+h\item 
+src/\+States/Initialisation\+State.\+cpp\end{DoxyCompactItemize}
