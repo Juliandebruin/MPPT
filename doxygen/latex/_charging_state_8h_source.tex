@@ -1,0 +1,30 @@
+\hypertarget{_charging_state_8h_source}{}\doxysection{Charging\+State.\+h}
+\label{_charging_state_8h_source}\index{include/States/ChargingState.h@{include/States/ChargingState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}State.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}CanComs.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}ControlFan.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}MpptCommunication.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}DisplayRegisterData.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_charging_state}{ChargingState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_charging_state_ae3713d8d847b8ba2dd2688f90b951fcc}{ChargingState}}();}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_charging_state_a82202f479f648869df82687a8b2671ea}{\string~ChargingState}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_charging_state_aa57edf8090754d68eae08f27ea3b784c}{enter}}()  \textcolor{keyword}{override};}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_charging_state_afd04709aca751e7abc2a5c107d81e9c8}{update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_charging_state_adad38114ace14c2c707123d023516446}{exit}}()   \textcolor{keyword}{override};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{private}:}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_control_fan}{ControlFan}} \_fan;                 \textcolor{comment}{/*< Instance to control the fan.    */}   }
+\DoxyCodeLine{39     \mbox{\hyperlink{class_can_coms}{CanComs}}  \_can\_coms;                 \textcolor{comment}{/*< Instance of CanCommunication.   */}}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_mppt_communication}{MpptCommunication}} \_coms;          \textcolor{comment}{/*< Instance of MpptCommunication.  */}}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_display_register_data}{DisplayRegisterData}} \_display\_data; \textcolor{comment}{/*< Display register data instance. */}}
+\DoxyCodeLine{42 \};}
+
+\end{DoxyCode}

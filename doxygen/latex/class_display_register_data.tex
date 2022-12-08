@@ -1,0 +1,71 @@
+\hypertarget{class_display_register_data}{}\doxysection{Display\+Register\+Data Class Reference}
+\label{class_display_register_data}\index{DisplayRegisterData@{DisplayRegisterData}}
+
+
+Class which handles displaying register data.  
+
+
+
+
+{\ttfamily \#include $<$Display\+Register\+Data.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_display_register_data_aae3f1e199867e2f0acc24e2221b6d46c}\label{class_display_register_data_aae3f1e199867e2f0acc24e2221b6d46c}} 
+{\bfseries Display\+Register\+Data} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Display Register Data instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_display_register_data_aee04686401370b967c60c54134fd169c}\label{class_display_register_data_aee04686401370b967c60c54134fd169c}} 
+virtual {\bfseries $\sim$\+Display\+Register\+Data} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Display Register Data instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_display_register_data_acef783a307b27799dc19c930e28cac98}{display\+\_\+register\+\_\+as\+\_\+float}} (\mbox{\hyperlink{struct_s_read_reg_info}{SRead\+Reg\+Info}} reg, float value)
+\begin{DoxyCompactList}\small\item\em Display the register data on the serial monitor as float. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_display_register_data_a8bae50a1d521cad9239a3948b75ea356}{float\+\_\+to\+\_\+string}} (float value)
+\begin{DoxyCompactList}\small\item\em Transforms a float into string value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class which handles displaying register data. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_display_register_data_acef783a307b27799dc19c930e28cac98}\label{class_display_register_data_acef783a307b27799dc19c930e28cac98}} 
+\index{DisplayRegisterData@{DisplayRegisterData}!display\_register\_as\_float@{display\_register\_as\_float}}
+\index{display\_register\_as\_float@{display\_register\_as\_float}!DisplayRegisterData@{DisplayRegisterData}}
+\doxysubsubsection{\texorpdfstring{display\_register\_as\_float()}{display\_register\_as\_float()}}
+{\footnotesize\ttfamily void Display\+Register\+Data\+::display\+\_\+register\+\_\+as\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_read_reg_info}{SRead\+Reg\+Info}}}]{reg,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Display the register data on the serial monitor as float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register information. \\
+\hline
+{\em value} & Value of register as float. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_display_register_data_a8bae50a1d521cad9239a3948b75ea356}\label{class_display_register_data_a8bae50a1d521cad9239a3948b75ea356}} 
+\index{DisplayRegisterData@{DisplayRegisterData}!float\_to\_string@{float\_to\_string}}
+\index{float\_to\_string@{float\_to\_string}!DisplayRegisterData@{DisplayRegisterData}}
+\doxysubsubsection{\texorpdfstring{float\_to\_string()}{float\_to\_string()}}
+{\footnotesize\ttfamily std\+::string Display\+Register\+Data\+::float\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Transforms a float into string value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string transformed value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Display\+Register\+Data.\+h\item 
+src/Display\+Register\+Data.\+cpp\end{DoxyCompactItemize}

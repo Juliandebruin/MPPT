@@ -1,0 +1,71 @@
+\hypertarget{class_mppt_communication}{}\doxysection{Mppt\+Communication Class Reference}
+\label{class_mppt_communication}\index{MpptCommunication@{MpptCommunication}}
+
+
+Class which handles sending and recieving data to the MPPT.  
+
+
+
+
+{\ttfamily \#include $<$Mppt\+Communication.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mppt_communication_ab569873a3c8f91f8823628a1c0e25e57}\label{class_mppt_communication_ab569873a3c8f91f8823628a1c0e25e57}} 
+{\bfseries Mppt\+Communication} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_mppt_communication}{Mppt\+Communication}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mppt_communication_a3d69379505db7df080761407096a55aa}\label{class_mppt_communication_a3d69379505db7df080761407096a55aa}} 
+virtual {\bfseries $\sim$\+Mppt\+Communication} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_mppt_communication}{Mppt\+Communication}} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mppt_communication_a959aa73753c4424b2cd3c63b6628c937}{send\+\_\+data}} (\mbox{\hyperlink{struct_s_write_reg_info}{SWrite\+Reg\+Info}} reg, uint16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Send data to a register. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mppt_communication_a9e359270b55032d03e07970f9782a061}{get\+\_\+register\+\_\+data}} (\mbox{\hyperlink{struct_s_read_reg_info}{SRead\+Reg\+Info}} reg)
+\begin{DoxyCompactList}\small\item\em Retrieve a message from the MPPT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class which handles sending and recieving data to the MPPT. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mppt_communication_a9e359270b55032d03e07970f9782a061}\label{class_mppt_communication_a9e359270b55032d03e07970f9782a061}} 
+\index{MpptCommunication@{MpptCommunication}!get\_register\_data@{get\_register\_data}}
+\index{get\_register\_data@{get\_register\_data}!MpptCommunication@{MpptCommunication}}
+\doxysubsubsection{\texorpdfstring{get\_register\_data()}{get\_register\_data()}}
+{\footnotesize\ttfamily float Mppt\+Communication\+::get\+\_\+register\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_read_reg_info}{SRead\+Reg\+Info}}}]{reg }\end{DoxyParamCaption})}
+
+
+
+Retrieve a message from the MPPT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Struct which contains the register information to read date. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of register as float. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_mppt_communication_a959aa73753c4424b2cd3c63b6628c937}\label{class_mppt_communication_a959aa73753c4424b2cd3c63b6628c937}} 
+\index{MpptCommunication@{MpptCommunication}!send\_data@{send\_data}}
+\index{send\_data@{send\_data}!MpptCommunication@{MpptCommunication}}
+\doxysubsubsection{\texorpdfstring{send\_data()}{send\_data()}}
+{\footnotesize\ttfamily void Mppt\+Communication\+::send\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_write_reg_info}{SWrite\+Reg\+Info}}}]{reg,  }\item[{uint16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Send data to a register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register info to send data to the register. \\
+\hline
+{\em data} & Data to send. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Mppt\+Communication.\+h\item 
+src/Mppt\+Communication.\+cpp\end{DoxyCompactItemize}

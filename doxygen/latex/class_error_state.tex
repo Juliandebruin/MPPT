@@ -1,0 +1,86 @@
+\hypertarget{class_error_state}{}\doxysection{Error\+State Class Reference}
+\label{class_error_state}\index{ErrorState@{ErrorState}}
+
+
+Error state class which is active an error occurs in the MPPT.  
+
+
+
+
+{\ttfamily \#include $<$Error\+State.\+h$>$}
+
+Inheritance diagram for Error\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_error_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_error_state_a5352c4c7895ca89424d36a051249f902}\label{class_error_state_a5352c4c7895ca89424d36a051249f902}} 
+{\bfseries Error\+State} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Error \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_error_state_a1343b13a9feac276a1a26a523dfae1a5}\label{class_error_state_a1343b13a9feac276a1a26a523dfae1a5}} 
+virtual {\bfseries $\sim$\+Error\+State} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Error \mbox{\hyperlink{class_state}{State}} instance. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_error_state_a79806bd5f95fc7bdb37b05f444c2069a}{enter}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is entered. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_error_state_a179d6bb2caed27bdef3c37f11265c29a}{update}} () override
+\begin{DoxyCompactList}\small\item\em Function contains the update loop of the state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_error_state_ad3b6e725831682a32fae98e07c091c89}{exit}} () override
+\begin{DoxyCompactList}\small\item\em Function is called when state is exited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Error state class which is active an error occurs in the MPPT. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_error_state_a79806bd5f95fc7bdb37b05f444c2069a}\label{class_error_state_a79806bd5f95fc7bdb37b05f444c2069a}} 
+\index{ErrorState@{ErrorState}!enter@{enter}}
+\index{enter@{enter}!ErrorState@{ErrorState}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void Error\+State\+::enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is entered. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a4f6c95c60d9c66bd1c5dd7425bfc764c}{State}}.
+
+\mbox{\Hypertarget{class_error_state_ad3b6e725831682a32fae98e07c091c89}\label{class_error_state_ad3b6e725831682a32fae98e07c091c89}} 
+\index{ErrorState@{ErrorState}!exit@{exit}}
+\index{exit@{exit}!ErrorState@{ErrorState}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void Error\+State\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function is called when state is exited. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a9cd211326a31e139de1dbeacb01ef188}{State}}.
+
+\mbox{\Hypertarget{class_error_state_a179d6bb2caed27bdef3c37f11265c29a}\label{class_error_state_a179d6bb2caed27bdef3c37f11265c29a}} 
+\index{ErrorState@{ErrorState}!update@{update}}
+\index{update@{update}!ErrorState@{ErrorState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Error\+State\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function contains the update loop of the state. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a06315e7e44aadfa576cbf7e6c1c7d87f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+States/Error\+State.\+h\item 
+src/\+States/Error\+State.\+cpp\end{DoxyCompactItemize}

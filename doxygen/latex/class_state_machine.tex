@@ -1,0 +1,82 @@
+\hypertarget{class_state_machine}{}\doxysection{State\+Machine Class Reference}
+\label{class_state_machine}\index{StateMachine@{StateMachine}}
+
+
+\mbox{\hyperlink{class_state}{State}} machine class which handles the state transitions.  
+
+
+
+
+{\ttfamily \#include $<$State\+Machine.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_machine_ad5af4aecb482da7f35b9d1987460e862}\label{class_state_machine_ad5af4aecb482da7f35b9d1987460e862}} 
+void {\bfseries start} ()
+\begin{DoxyCompactList}\small\item\em Function starts the state machine. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_state_machine_abc3ca328b644f3d2c557fd04ccd65ddd}\label{class_state_machine_abc3ca328b644f3d2c557fd04ccd65ddd}} 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em Function calles update function of state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_machine_a6a25ac1e8390e6d05b864f233b48be5e}{change\+\_\+state}} (EState new\+State)
+\begin{DoxyCompactList}\small\item\em Function switches states and calles exit and enter functions. \end{DoxyCompactList}\item 
+EState \mbox{\hyperlink{class_state_machine_a04ca063a32cadabc92e417d5f1adf3a7}{get\+\_\+current\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_state_machine}{State\+Machine}} \& \mbox{\hyperlink{class_state_machine_aa0ef420d141c0bc8ec3edb7c051d3e99}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Creates static instance of \mbox{\hyperlink{class_state_machine}{State\+Machine}}, which can be accessed from anywhere and only exists once. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_state}{State}} machine class which handles the state transitions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_machine_a6a25ac1e8390e6d05b864f233b48be5e}\label{class_state_machine_a6a25ac1e8390e6d05b864f233b48be5e}} 
+\index{StateMachine@{StateMachine}!change\_state@{change\_state}}
+\index{change\_state@{change\_state}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{change\_state()}{change\_state()}}
+{\footnotesize\ttfamily void State\+Machine\+::change\+\_\+state (\begin{DoxyParamCaption}\item[{EState}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+Function switches states and calles exit and enter functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & The new state to switch to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_state_machine_a04ca063a32cadabc92e417d5f1adf3a7}\label{class_state_machine_a04ca063a32cadabc92e417d5f1adf3a7}} 
+\index{StateMachine@{StateMachine}!get\_current\_state@{get\_current\_state}}
+\index{get\_current\_state@{get\_current\_state}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{get\_current\_state()}{get\_current\_state()}}
+{\footnotesize\ttfamily EState State\+Machine\+::get\+\_\+current\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current state. 
+
+\begin{DoxyReturn}{Returns}
+Returns EState. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_machine_aa0ef420d141c0bc8ec3edb7c051d3e99}\label{class_state_machine_aa0ef420d141c0bc8ec3edb7c051d3e99}} 
+\index{StateMachine@{StateMachine}!instance@{instance}}
+\index{instance@{instance}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_state_machine}{State\+Machine}} \& State\+Machine\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates static instance of \mbox{\hyperlink{class_state_machine}{State\+Machine}}, which can be accessed from anywhere and only exists once. 
+
+\begin{DoxyReturn}{Returns}
+static \mbox{\hyperlink{class_state_machine}{State\+Machine}} instance 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/State\+Machine.\+h\item 
+src/State\+Machine.\+cpp\end{DoxyCompactItemize}

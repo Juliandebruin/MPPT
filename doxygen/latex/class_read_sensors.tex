@@ -1,0 +1,52 @@
+\hypertarget{class_read_sensors}{}\doxysection{Read\+Sensors Class Reference}
+\label{class_read_sensors}\index{ReadSensors@{ReadSensors}}
+
+
+Read the sensors values of temprature sensors of MPPT.  
+
+
+
+
+{\ttfamily \#include $<$Read\+Sensors.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_read_sensors_ade98ef0194e4e0b34b0a31800ad14677}\label{class_read_sensors_ade98ef0194e4e0b34b0a31800ad14677}} 
+{\bfseries Read\+Sensors} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Read Sensors instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_read_sensors_a1797c04ca2ac4c9b02ead59d395cafda}\label{class_read_sensors_a1797c04ca2ac4c9b02ead59d395cafda}} 
+virtual {\bfseries $\sim$\+Read\+Sensors} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Read Sensors instance. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_read_sensors_a62f1008195ba8469765544b28e427e37}{get\+\_\+temperature}} (int sensor\+Id)
+\begin{DoxyCompactList}\small\item\em Get the temperature of one of the two sensors on the circuit board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Read the sensors values of temprature sensors of MPPT. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_read_sensors_a62f1008195ba8469765544b28e427e37}\label{class_read_sensors_a62f1008195ba8469765544b28e427e37}} 
+\index{ReadSensors@{ReadSensors}!get\_temperature@{get\_temperature}}
+\index{get\_temperature@{get\_temperature}!ReadSensors@{ReadSensors}}
+\doxysubsubsection{\texorpdfstring{get\_temperature()}{get\_temperature()}}
+{\footnotesize\ttfamily float Read\+Sensors\+::get\+\_\+temperature (\begin{DoxyParamCaption}\item[{int}]{sensor\+Id }\end{DoxyParamCaption})}
+
+
+
+Get the temperature of one of the two sensors on the circuit board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Id} & Define which sensor to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Returns the temperature of the sensor. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Read\+Sensors.\+h\item 
+src/Read\+Sensors.\+cpp\end{DoxyCompactItemize}
