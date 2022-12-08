@@ -24,7 +24,7 @@ public:
      * @param reg Register information.
      * @param value Value of register as float.
      */
-    void display_register_value(SReadRegInfo reg, float value);
+    void display_register_value(SRegisterInfo reg, float value);
 
 private:
     /**

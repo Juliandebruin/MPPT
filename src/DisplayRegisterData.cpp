@@ -10,7 +10,7 @@ DisplayRegisterData::~DisplayRegisterData() {
 
 }
 
-void DisplayRegisterData::display_register_value(SReadRegInfo reg, float value) {
+void DisplayRegisterData::display_register_value(SRegisterInfo reg, float value) {
     std::string printString = "Register: " + reg.name + " value: " + float_to_string(value) + "\n";
 	Serial.print(printString.c_str());
 }
