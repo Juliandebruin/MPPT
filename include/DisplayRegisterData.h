@@ -26,7 +26,6 @@ public:
      */
     void display_register_value(SRegisterInfo reg, float value);
 
-private:
     /**
      * @brief Transforms a float into string value.
      * 

@@ -6,49 +6,6 @@
 #define SDL_PIN 22
 #define I2C_CLOCK_SPEED 100000
 
-/**
- * @brief Struct which contains names of all telemetry(TELE) registers.
- */
-enum ERegisters {
-	TELE_TBAT = 0    ,
-	TELE_POUT        ,
-    TELE_PIN         ,
-    TELE_EFF         ,
-    TELE_IOUT        ,
-    TELE_IIN         ,
-    TELE_VBAT        ,
-    TELE_VIN         ,
-    TELE_VINR        ,
-    STAT_CHARGER     ,
-    STAT_SYSTEM      ,
-    STAT_SUPPLY      ,
-    STAT_TS0_REMAIN  ,
-    STAT_TS1_REMAIN  ,
-    STAT_TS2_REMAIN  ,
-    STAT_TS3_REMAIN  ,
-    STAT_CHRG_FAULTS ,
-    STAT_VERSION     ,
-    STAT_BOOT_CRC    ,
-    STAT_CFG_CRC	 ,
-	CTRL_WRT_TO_BOOT ,
-	CTRL_EE_WRT_EN   ,
-	CTRL_HALT_STARTUP,
-	CTRL_CHRG_EN	 ,
-	CTRL_RESTART_CHIP,
-	CTRL_RESET_FLAG  ,
-	CTRL_UPDATE_TELEM,
-	CFG_RSENSE1      ,
-	CFG_RIMON_OUT    ,
-	CFG_RSENSE2      ,
-	CFG_RDACO        ,	
-	CFG_RFBOUT1      ,
-	CFG_RFBOUT2      ,
-	CFG_RDACI        ,	
-	CFG_RFBIN2       ,	
-	CFG_RFBIN1       ,
-	CFG_INIT_CHRG_EN
-};
-
 MpptCommunication::MpptCommunication() : 
 	_wire(&Wire),
 	_typeToSize {
@@ -94,11 +51,6 @@ MpptCommunication::MpptCommunication() :
 		{ERegisters::CFG_RFBIN2	  	  , {"CFG_RFBIN2"       , EReadWrite::READ		, EDataSize::WORD,  100, I2C_ADDRESS, 0x36}},
 		{ERegisters::CFG_RFBIN1		  , {"CFG_RFBIN1"       , EReadWrite::READ		, EDataSize::WORD,   10, I2C_ADDRESS, 0x38}},
 		{ERegisters::CFG_INIT_CHRG_EN , {"CFG_INIT_CHRG_EN" , EReadWrite::READ_WRITE, EDataSize::BYTE,    1, I2C_ADDRESS, 0x3A}},
-		// {ERegisters::CFG_VS3_25C	  , {"CFG_VS3_25C"      , EReadWrite::READ		, EDataSize::BYTE,    1, I2C_ADDRESS, 0x3B}},
-		// {ERegisters::CFG_UV_S0		  , {"CFG_UV_S0"        , EReadWrite::READ		, EDataSize::BYTE,    1, I2C_ADDRESS, 0x3C}},
-		// {ERegisters::CFG_S0_UV		  , {"CFG_S0_UV"        , EReadWrite::READ		, EDataSize::BYTE,    1, I2C_ADDRESS, 0x3D}},
-		// {ERegisters::CFG_S0_S1		  ,	{"CFG_S0_S1"        , EReadWrite::READ		, EDataSize::BYTE,    1, I2C_ADDRESS, 0x3E}},
-		// {ERegisters::CFG_S1_S0		  , {"CFG_S1_S0"        , EReadWrite::READ		, EDataSize::BYTE,    1, I2C_ADDRESS, 0x3F}},
 	}
 {
 	pinMode(SDA_PIN, OUTPUT);

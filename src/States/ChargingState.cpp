@@ -29,19 +29,20 @@ void ChargingState::enter(){
 	};
 
 	_fan.set_fan_speed(100);
-	_coms.send_data(chargeWrite, 0x01);
 }
 
 void ChargingState::update(){
 	Serial.println("Updating ChargingState");
 
-	for (int i = 0; i < _coms._read_registers.size(); i++) {
-		SRegisterInfo reg = _coms._read_registers.find(i)->second;
-		if (reg.settings == EReadWrite::READ) {
-			float value = _coms.get_register_data(reg);
-			_display_data.display_register_value(reg, value);
-		}
-	}
+	SRegisterInfo s_Pin = _coms._read_registers.find(ERegisters::TELE_PIN)->second;
+	float f_Pin = _coms.get_register_data(s_Pin);
+	_display_data.display_register_value(s_Pin, f_Pin);
+	_can_coms.send_message(0x21, _display_data.float_to_string(f_Pin));
+
+	SRegisterInfo s_Pout = _coms._read_registers.find(ERegisters::TELE_POUT)->second;
+	float f_Pout = _coms.get_register_data(s_Pout);
+	_display_data.display_register_value(s_Pout, f_Pout);
+	_can_coms.send_message(0x22, _display_data.float_to_string(f_Pout));
 }
 
 void ChargingState::exit(){

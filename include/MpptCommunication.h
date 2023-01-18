@@ -39,6 +39,49 @@ struct SRegisterInfo {
 };
 
 /**
+ * @brief Struct which contains names of all telemetry(TELE) registers.
+ */
+enum ERegisters {
+	TELE_TBAT = 0    ,
+	TELE_POUT        ,
+    TELE_PIN         ,
+    TELE_EFF         ,
+    TELE_IOUT        ,
+    TELE_IIN         ,
+    TELE_VBAT        ,
+    TELE_VIN         ,
+    TELE_VINR        ,
+    STAT_CHARGER     ,
+    STAT_SYSTEM      ,
+    STAT_SUPPLY      ,
+    STAT_TS0_REMAIN  ,
+    STAT_TS1_REMAIN  ,
+    STAT_TS2_REMAIN  ,
+    STAT_TS3_REMAIN  ,
+    STAT_CHRG_FAULTS ,
+    STAT_VERSION     ,
+    STAT_BOOT_CRC    ,
+    STAT_CFG_CRC	 ,
+	CTRL_WRT_TO_BOOT ,
+	CTRL_EE_WRT_EN   ,
+	CTRL_HALT_STARTUP,
+	CTRL_CHRG_EN	 ,
+	CTRL_RESTART_CHIP,
+	CTRL_RESET_FLAG  ,
+	CTRL_UPDATE_TELEM,
+	CFG_RSENSE1      ,
+	CFG_RIMON_OUT    ,
+	CFG_RSENSE2      ,
+	CFG_RDACO        ,	
+	CFG_RFBOUT1      ,
+	CFG_RFBOUT2      ,
+	CFG_RDACI        ,	
+	CFG_RFBIN2       ,	
+	CFG_RFBIN1       ,
+	CFG_INIT_CHRG_EN
+};
+
+/**
  * @brief Class which handles sending and recieving data to the MPPT.
  */
 class MpptCommunication

@@ -3,7 +3,7 @@
 #include <CAN.h>
 
 CanComs::CanComs() {
-	CAN.begin(100E3);
+	CAN.begin(500E3);
 }
 
 CanComs::~CanComs() {

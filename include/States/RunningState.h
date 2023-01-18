@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.h"
+#include "CanComs.h"
 #include "ReadSensors.h"
 #include "MpptCommunication.h"
 #include "DisplayRegisterData.h"
@@ -34,7 +35,8 @@ public:
 	virtual void exit()   override;
 
 private:
-	ReadSensors _sensors;			  /*< Instance torRead the temperature sensors on the circuit board. */
-	MpptCommunication _coms;		  /*< Instance of MpptCommunication.  								 */
-	DisplayRegisterData _display_data; /*< Display register data instance. 								 */
+	CanComs _can_coms;			   	   /*< Instance of CanComs. 										  */
+	ReadSensors _sensors;			   /*< Instance torRead the temperature sensors on the circuit board. */
+	MpptCommunication _coms;		   /*< Instance of MpptCommunication.  								  */
+	DisplayRegisterData _display_data; /*< Display register data instance. 								  */
 };
